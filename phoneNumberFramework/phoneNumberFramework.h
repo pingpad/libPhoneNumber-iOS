@@ -17,11 +17,11 @@ FOUNDATION_EXPORT const unsigned char phoneNumberFrameworkVersionString[];
 // In this header, you should import all the public headers of your framework using statements like #import <phoneNumberFramework/PublicHeader.h>
 
 
-#import <libPhoneNumberFramework/NBAsYouTypeFormatter.h>
-#import <libPhoneNumberFramework/NBPhoneNumberUtil.h>
-#import <libPhoneNumberFramework/NBNumberFormat.h>
-#import <libPhoneNumberFramework/NBPhoneNumber.h>
-#import <libPhoneNumberFramework/NBPhoneNumberDesc.h>
-#import <libPhoneNumberFramework/NBPhoneNumberDefines.h>
-#import <libPhoneNumberFramework/NBPhoneMetaData.h>
-#import <libPhoneNumberFramework/NSArray+NBAdditions.h>
+#import <libPhoneNumber/NBAsYouTypeFormatter.h>
+#import <libPhoneNumber/NBPhoneNumberUtil.h>
+#import <libPhoneNumber/NBNumberFormat.h>
+#import <libPhoneNumber/NBPhoneNumber.h>
+#import <libPhoneNumber/NBPhoneNumberDesc.h>
+#import <libPhoneNumber/NBPhoneNumberDefines.h>
+#import <libPhoneNumber/NBPhoneMetaData.h>
+#import <libPhoneNumber/NSArray+NBAdditions.h>
