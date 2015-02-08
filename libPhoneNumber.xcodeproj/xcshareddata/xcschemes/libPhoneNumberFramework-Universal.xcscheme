@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "8BA73F4C1A8444AB0085ED9A"
-               BuildableName = "libPhoneNumber.framework"
-               BlueprintName = "libPhoneNumber"
+               BlueprintIdentifier = "8B634ABA1A860080009226D1"
+               BuildableName = "libPhoneNumberFramework-Universal"
+               BlueprintName = "libPhoneNumberFramework-Universal"
                ReferencedContainer = "container:libPhoneNumber.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -42,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BA73F4C1A8444AB0085ED9A"
-            BuildableName = "libPhoneNumber.framework"
-            BlueprintName = "libPhoneNumber"
+            BlueprintIdentifier = "8B634ABA1A860080009226D1"
+            BuildableName = "libPhoneNumberFramework-Universal"
+            BlueprintName = "libPhoneNumberFramework-Universal"
             ReferencedContainer = "container:libPhoneNumber.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -60,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "8BA73F4C1A8444AB0085ED9A"
-            BuildableName = "libPhoneNumber.framework"
-            BlueprintName = "libPhoneNumber"
+            BlueprintIdentifier = "8B634ABA1A860080009226D1"
+            BuildableName = "libPhoneNumberFramework-Universal"
+            BlueprintName = "libPhoneNumberFramework-Universal"
             ReferencedContainer = "container:libPhoneNumber.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

@@ -6,6 +6,20 @@
 	objectVersion = 46;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		8B634ABA1A860080009226D1 /* libPhoneNumberFramework-Universal */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 8B634ABD1A860080009226D1 /* Build configuration list for PBXAggregateTarget "libPhoneNumberFramework-Universal" */;
+			buildPhases = (
+				8B634ABE1A86008E009226D1 /* ShellScript */,
+			);
+			dependencies = (
+			);
+			name = "libPhoneNumberFramework-Universal";
+			productName = "Build Universal Framework";
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		187A618E1A25DF04000D8BB6 /* PhoneNumberMetaData.json in Resources */ = {isa = PBXBuildFile; fileRef = 187A618A1A25DF04000D8BB6 /* PhoneNumberMetaData.json */; };
 		187A618F1A25DF04000D8BB6 /* PhoneNumberMetaDataForTesting.json in Resources */ = {isa = PBXBuildFile; fileRef = 187A618B1A25DF04000D8BB6 /* PhoneNumberMetaDataForTesting.json */; };
@@ -427,21 +441,20 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8BA73F4C1A8444AB0085ED9A /* phoneNumberFramework */ = {
+		8BA73F4C1A8444AB0085ED9A /* libPhoneNumber */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 8BA73F6A1A8444AC0085ED9A /* Build configuration list for PBXNativeTarget "phoneNumberFramework" */;
+			buildConfigurationList = 8BA73F6A1A8444AC0085ED9A /* Build configuration list for PBXNativeTarget "libPhoneNumber" */;
 			buildPhases = (
 				8BA73F481A8444AB0085ED9A /* Sources */,
 				8BA73F491A8444AB0085ED9A /* Frameworks */,
 				8BA73F4A1A8444AB0085ED9A /* Headers */,
 				8BA73F4B1A8444AB0085ED9A /* Resources */,
-				8B3484961A849677000240A7 /* Run Script */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = phoneNumberFramework;
+			name = libPhoneNumber;
 			productName = phoneNumberFramework;
 			productReference = 8BA73F4D1A8444AB0085ED9A /* phoneNumberFramework.framework */;
 			productType = "com.apple.product-type.framework";
@@ -465,9 +478,9 @@
 			productReference = 8BA73F571A8444AC0085ED9A /* phoneNumberFrameworkTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		FD7A061B167715A0004BBEB6 /* libPhoneNumber */ = {
+		FD7A061B167715A0004BBEB6 /* libPhoneNumberDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = FD7A064F167715A1004BBEB6 /* Build configuration list for PBXNativeTarget "libPhoneNumber" */;
+			buildConfigurationList = FD7A064F167715A1004BBEB6 /* Build configuration list for PBXNativeTarget "libPhoneNumberDemo" */;
 			buildPhases = (
 				FD7A0618167715A0004BBEB6 /* Sources */,
 				FD7A0619167715A0004BBEB6 /* Frameworks */,
@@ -478,7 +491,7 @@
 			);
 			dependencies = (
 			);
-			name = libPhoneNumber;
+			name = libPhoneNumberDemo;
 			productName = libPhoneNumber;
 			productReference = FD7A061C167715A0004BBEB6 /* libPhoneNumber.app */;
 			productType = "com.apple.product-type.application";
@@ -512,6 +525,9 @@
 				LastUpgradeCheck = 0450;
 				ORGANIZATIONNAME = NHN;
 				TargetAttributes = {
+					8B634ABA1A860080009226D1 = {
+						CreatedOnToolsVersion = 6.2;
+					};
 					8BA73F4C1A8444AB0085ED9A = {
 						CreatedOnToolsVersion = 6.2;
 					};
@@ -533,10 +549,11 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				FD7A061B167715A0004BBEB6 /* libPhoneNumber */,
+				FD7A061B167715A0004BBEB6 /* libPhoneNumberDemo */,
 				FD7A063C167715A1004BBEB6 /* libPhoneNumberTests */,
-				8BA73F4C1A8444AB0085ED9A /* phoneNumberFramework */,
+				8BA73F4C1A8444AB0085ED9A /* libPhoneNumber */,
 				8BA73F561A8444AC0085ED9A /* phoneNumberFrameworkTests */,
+				8B634ABA1A860080009226D1 /* libPhoneNumberFramework-Universal */,
 			);
 		};
 /* End PBXProject section */
@@ -588,19 +605,18 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		8B3484961A849677000240A7 /* Run Script */ = {
+		8B634ABE1A86008E009226D1 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Run Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#set -e\n#\n#DEVICE_PATH=\"${OBJROOT}/UninstalledProducts/${TARGET_NAME}.framework\"\n#SIMULATOR_PATH=\"${SYMROOT}/../../../../Products/Debug-iphonesimulator/${TARGET_NAME}.framework\"\n#ARCHIVE_PATH=\"${SRCROOT}/_Archive\"\n#if [ \"${CONFIGURATION}\" = \"Release\" ]; then\n#if [ -d \"${DEVICE_PATH}\" ]; then\n#if [ -d \"${SIMULATOR_PATH}\" ]; then\n#rm -rf \"${ARCHIVE_PATH}\"\n#mkdir \"${ARCHIVE_PATH}\"\n#cp -r \"${DEVICE_PATH}\" \"${ARCHIVE_PATH}\"\n#lipo -create \"${DEVICE_PATH}/${TARGET_NAME}\" \"${SIMULATOR_PATH}/${TARGET_NAME}\" -output \"${ARCHIVE_PATH}/${TARGET_NAME}.framework/${TARGET_NAME}\"\n#fi\n#fi\n#fi\n#exit 0;\n";
+			shellScript = "######################\n# Options\n######################\n\nREVEAL_ARCHIVE_IN_FINDER=true #false\n\nFRAMEWORK_NAME=\"${PROJECT_NAME}\"\n\nSIMULATOR_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphonesimulator/${FRAMEWORK_NAME}.framework\"\n\nDEVICE_LIBRARY_PATH=\"${BUILD_DIR}/${CONFIGURATION}-iphoneos/${FRAMEWORK_NAME}.framework\"\n\nUNIVERSAL_LIBRARY_DIR=\"${BUILD_DIR}/${CONFIGURATION}-iphoneuniversal\"\n\nFRAMEWORK=\"${UNIVERSAL_LIBRARY_DIR}/${FRAMEWORK_NAME}.framework\"\n\n\necho \"FRAMEWORK_NAME: ${FRAMEWORK_NAME}\"\necho \"SIMULATOR_LIBRARY_PATH: ${SIMULATOR_LIBRARY_PATH}\"\necho \"DEVICE_LIBRARY_PATH: ${DEVICE_LIBRARY_PATH}\"\necho \"UNIVERSAL_LIBRARY_DIR: ${UNIVERSAL_LIBRARY_DIR}\"\necho \"FRAMEWORK: ${FRAMEWORK}\"\n\n\n######################\n# Build Frameworks\n######################\n\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -scheme ${PROJECT_NAME} -sdk iphonesimulator -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphonesimulator 2>&1\n\nxcodebuild -project ${PROJECT_NAME}.xcodeproj -scheme ${PROJECT_NAME} -sdk iphoneos -configuration ${CONFIGURATION} clean build CONFIGURATION_BUILD_DIR=${BUILD_DIR}/${CONFIGURATION}-iphoneos 2>&1\n\n######################\n# Create directory for universal\n######################\n\nrm -rf \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${UNIVERSAL_LIBRARY_DIR}\"\n\nmkdir \"${FRAMEWORK}\"\n\n\n######################\n# Copy files Framework\n######################\n\ncp -r \"${DEVICE_LIBRARY_PATH}/.\" \"${FRAMEWORK}\"\n\n\n######################\n# Make an universal binary\n######################\n\nlipo \"${SIMULATOR_LIBRARY_PATH}/${FRAMEWORK_NAME}\" \"${DEVICE_LIBRARY_PATH}/${FRAMEWORK_NAME}\" -create -output \"${FRAMEWORK}/${FRAMEWORK_NAME}\" | echo\n\n# For Swift framework, Swiftmodule needs to be copied in the universal framework\nif [ -d \"${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\n    cp -f \"${SIMULATOR_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\"* \"${FRAMEWORK}/Modules/{FRAMEWORK_NAME}.swiftmodule/\" | echo\nfi\n                                                                      \nif [ -d \"${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" ]; then\ncp -f \"${DEVICE_LIBRARY_PATH}/Modules/${FRAMEWORK_NAME}.swiftmodule/\"* \"${FRAMEWORK}/Modules/${FRAMEWORK_NAME}.swiftmodule/\" | echo\nfi\n                                                                      \n######################\n# On Release, copy the result to release directory\n######################\nOUTPUT_DIR=\"${PROJECT_DIR}/Output/${FRAMEWORK_NAME}-${CONFIGURATION}-iphoneuniversal/\"\nrm -rf \"$OUTPUT_DIR\"\nmkdir -p \"$OUTPUT_DIR\"\ncp -r \"${FRAMEWORK}\" \"$OUTPUT_DIR\"\nif [ ${REVEAL_ARCHIVE_IN_FINDER} = true ]; then\n    open \"${OUTPUT_DIR}/\"\nfi";
 		};
 		FD7A063B167715A1004BBEB6 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -680,17 +696,17 @@
 /* Begin PBXTargetDependency section */
 		8BA73F5A1A8444AC0085ED9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 8BA73F4C1A8444AB0085ED9A /* phoneNumberFramework */;
+			target = 8BA73F4C1A8444AB0085ED9A /* libPhoneNumber */;
 			targetProxy = 8BA73F591A8444AC0085ED9A /* PBXContainerItemProxy */;
 		};
 		8BA73F5C1A8444AC0085ED9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FD7A061B167715A0004BBEB6 /* libPhoneNumber */;
+			target = FD7A061B167715A0004BBEB6 /* libPhoneNumberDemo */;
 			targetProxy = 8BA73F5B1A8444AC0085ED9A /* PBXContainerItemProxy */;
 		};
 		FD7A0643167715A1004BBEB6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = FD7A061B167715A0004BBEB6 /* libPhoneNumber */;
+			target = FD7A061B167715A0004BBEB6 /* libPhoneNumberDemo */;
 			targetProxy = FD7A0642167715A1004BBEB6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -715,6 +731,20 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		8B634ABB1A860080009226D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		8B634ABC1A860080009226D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		8BA73F661A8444AC0085ED9A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1024,7 +1054,16 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		8BA73F6A1A8444AC0085ED9A /* Build configuration list for PBXNativeTarget "phoneNumberFramework" */ = {
+		8B634ABD1A860080009226D1 /* Build configuration list for PBXAggregateTarget "libPhoneNumberFramework-Universal" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8B634ABB1A860080009226D1 /* Debug */,
+				8B634ABC1A860080009226D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8BA73F6A1A8444AC0085ED9A /* Build configuration list for PBXNativeTarget "libPhoneNumber" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				8BA73F661A8444AC0085ED9A /* Debug */,
@@ -1051,7 +1090,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		FD7A064F167715A1004BBEB6 /* Build configuration list for PBXNativeTarget "libPhoneNumber" */ = {
+		FD7A064F167715A1004BBEB6 /* Build configuration list for PBXNativeTarget "libPhoneNumberDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				FD7A0650167715A1004BBEB6 /* Debug */,
